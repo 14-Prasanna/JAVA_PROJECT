@@ -1,20 +1,60 @@
 package com.java.project.Group_java_project;
+
 import java.util.*;
 import com.java.project.Group_java_project.Restaurant_details.Login;
+import com.java.project.Group_java_project.Restaurant_details.ManagerLogin;
 
 public class App {
-  public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
-	//Gets the input for admin 
-    System.out.println("-----Welcome!!-----");
-    //from the login.java file
-    System.out.println("Enter the name : ");
-    String username = sc.nextLine();
-    System.out.println("Enter the password");
-    String password = sc.nextLine();
-    //object for getting inpit from the login.java
-    Login login = new Login();
-    //checks the input and condition given in the login.java
-	boolean ok = login.auth(username, password);
-  }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("------ Welcome ------");
+        System.out.println("1. Admin Login");
+        System.out.println("2. Restaurant Manager Login");
+        System.out.println("Choose your role : ");
+
+        int choice = sc.nextInt();
+        sc.nextLine();
+
+        switch(choice) {
+
+            case 1:
+
+                System.out.println("Enter Admin Name : ");
+                String adminUser = sc.nextLine();
+
+                System.out.println("Enter Admin Password : ");
+                String adminPass = sc.nextLine();
+
+                Login adminLogin = new Login();
+
+                boolean adminOk = adminLogin.auth(adminUser, adminPass);
+
+                break;
+
+
+            case 2:
+
+                System.out.println("Enter Manager Name : ");
+                String managerUser = sc.nextLine();
+
+                System.out.println("Enter Manager Password : ");
+                String managerPass = sc.nextLine();
+
+                ManagerLogin managerLogin = new ManagerLogin();
+
+                boolean managerOk = managerLogin.auth(managerUser, managerPass);
+
+                break;
+
+
+            default:
+                System.out.println("Invalid Option Selected");
+
+        }
+
+        sc.close();
+    }
 }
