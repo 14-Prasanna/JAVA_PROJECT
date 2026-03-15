@@ -1,6 +1,8 @@
 package com.java.project.Group_java_project;
 
 import java.util.*;
+
+import com.java.project.Group_java_project.Restaurant_details.Customer_Login;
 import com.java.project.Group_java_project.Restaurant_details.Login;
 import com.java.project.Group_java_project.Restaurant_details.ManagerLogin;
 
@@ -48,10 +50,29 @@ public class App {
                 boolean managerOk = managerLogin.auth(managerUser, managerPass);
 
                 break;
+                
+                
+            
+            case 3:
+
+                System.out.println("Enter Customer Name : ");
+                String customerUser = sc.nextLine();
+
+                System.out.println("Enter Customer Password : ");
+                String customerPass = sc.nextLine();
+
+                Customer_Login customerLogin = new Customer_Login();
+
+                boolean customerOk = customerLogin.auth(customerUser, customerPass);
+
+                break;
 
 
             default:
                 System.out.println("Invalid Option Selected");
+                
+                
+
 
         }
 
