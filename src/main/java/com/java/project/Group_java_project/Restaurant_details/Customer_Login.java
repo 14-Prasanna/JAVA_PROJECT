@@ -1,12 +1,12 @@
 package com.java.project.Group_java_project.Restaurant_details;
 
-// login authentication for restaurant manager
+// login authentication for customer
 public class Customer_Login {
 
     final String customer_name = "customer";
     final String customer_password = "customer1";
 
-    // method to check manager credentials
+    // method to check customer credentials
     public boolean auth(String username, String password) {
 
         if(customer_name.equals(username) && customer_password.equals(password)) {

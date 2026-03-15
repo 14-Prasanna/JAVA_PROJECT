@@ -15,6 +15,7 @@ public class App {
         System.out.println("------ Welcome ------");
         System.out.println("1. Admin Login");
         System.out.println("2. Restaurant Manager Login");
+        System.out.println("3. Customer Login");
         System.out.println("Choose your role : ");
 
         int choice = sc.nextInt();
